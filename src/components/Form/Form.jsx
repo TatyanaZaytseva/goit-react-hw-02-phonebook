@@ -12,7 +12,7 @@ export class Form extends Component {
   };
 
   handleInputChange = event => {
-    const { name, value, id } = event.currentTarget;
+    const { name, value } = event.currentTarget;
     this.setState({ [name]: value, id: nanoid() });
   };
 
