@@ -16,7 +16,12 @@ export class App extends Component {
   };
 
   formSubmitHandler = data => {
-    data
+    const { name, number } = data;
+    const nameToLowerCase = name.toLowerCase();
+    const nameDuplication = this.state.contacts.find(
+      contact => contact.name.toLowerCase() === nameToLowerCase
+    );
+    nameDuplication
       ? alert(`${data.name} is already in contacts`)
       : this.setState({
           contacts: [data, ...this.state.contacts],
