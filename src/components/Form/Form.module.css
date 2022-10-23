@@ -1,18 +1,9 @@
-.section_form {
-  padding: 20px;
-  width: 600px;
-}
-
-.title {
-  font-size: 30px;
-}
-
 .form {
   display: flex;
   flex-direction: column;
   padding: 30px;
   border: 1px solid black;
-  width: 100%;
+  width: 600px;
   margin-bottom: 40px;
 }
 

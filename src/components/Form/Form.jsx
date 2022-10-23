@@ -28,48 +28,45 @@ export class Form extends Component {
 
   render() {
     return (
-      <section className={css.section_form}>
-        <h2 className={css.title}>Phonebook</h2>
-        <form
-          autoComplete="off"
-          name="Phonebook"
-          className={css.form}
-          onSubmit={this.handleSubmit}
-        >
-          <label htmlFor={this.nameInputId} className={css.label}>
-            Name <br />
-            <input
-              type="text"
-              name="name"
-              id={this.nameInputId}
-              pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-              title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-              required
-              className={css.input}
-              value={this.state.name}
-              onChange={this.handleInputChange}
-            />
-          </label>
-          <label htmlFor={this.numberInputId} className={css.label}>
-            Number <br />
-            <input
-              type="tel"
-              name="number"
-              id={this.numberInputId}
-              pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-              title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-              required
-              className={css.input}
-              value={this.state.number}
-              onChange={this.handleInputChange}
-            />
-          </label>
+      <form
+        autoComplete="off"
+        name="Phonebook"
+        className={css.form}
+        onSubmit={this.handleSubmit}
+      >
+        <label htmlFor={this.nameInputId} className={css.label}>
+          Name <br />
+          <input
+            type="text"
+            name="name"
+            id={this.nameInputId}
+            pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+            title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+            required
+            className={css.input}
+            value={this.state.name}
+            onChange={this.handleInputChange}
+          />
+        </label>
+        <label htmlFor={this.numberInputId} className={css.label}>
+          Number <br />
+          <input
+            type="tel"
+            name="number"
+            id={this.numberInputId}
+            pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+            title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+            required
+            className={css.input}
+            value={this.state.number}
+            onChange={this.handleInputChange}
+          />
+        </label>
 
-          <button type="submit" className={css.button}>
-            Add contact
-          </button>
-        </form>
-      </section>
+        <button type="submit" className={css.button}>
+          Add contact
+        </button>
+      </form>
     );
   }
 }
