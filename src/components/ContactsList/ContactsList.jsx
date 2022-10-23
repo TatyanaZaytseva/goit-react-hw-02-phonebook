@@ -1,5 +1,5 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { ContactItem } from 'components/ContactItem/ContactItem';
 import css from 'components/ContactsList/ContactsList.module.css';
 
@@ -15,7 +15,7 @@ export const ContactsList = ({ contacts, onDeleteContact }) => {
               id={contact.id}
               name={contact.name}
               number={contact.number}
-              // onDeleteContact={onDeleteContact}
+              onDeleteContact={onDeleteContact}
             />
           );
         })}
@@ -24,7 +24,7 @@ export const ContactsList = ({ contacts, onDeleteContact }) => {
   );
 };
 
-// Contacts.propTypes = {
-//   contacts: PropTypes.func.isRequired,
-//   onDeleteContact: PropTypes.func.isRequired,
-// };
+ContactsList.propTypes = {
+  contacts: PropTypes.func,
+  onDeleteContact: PropTypes.func,
+};

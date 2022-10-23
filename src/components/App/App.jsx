@@ -40,12 +40,22 @@ export class App extends Component {
       contact.name.toLowerCase().includes(contactToLowerCase)
     );
   };
+
+  onDeleteContact = contactID => {
+    this.setState(prevState => ({
+      contacts: prevState.contacts.filter(contact => contact.id !== contactID),
+    }));
+  };
+
   render() {
     return (
       <div className={css.container}>
         <Form onSubmit={this.formSubmitHandler} />
         <Filter contacts={this.state.filter} onFilter={this.handleFilter} />
-        <ContactsList contacts={this.filterContacts} />
+        <ContactsList
+          contacts={this.filterContacts}
+          onDeleteContact={this.onDeleteContact}
+        />
       </div>
     );
   }
