@@ -1,8 +1,8 @@
 import { Component } from 'react';
 import { nanoid } from 'nanoid';
-import css from 'components/Form/Form.module.css';
+import css from 'components/ContactForm/ContactForm.module.css';
 
-export class Form extends Component {
+export class ContactForm extends Component {
   nameInputId = nanoid();
   numberInputId = nanoid();
 
