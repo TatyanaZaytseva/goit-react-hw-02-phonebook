@@ -16,10 +16,11 @@ export class App extends Component {
   };
 
   formSubmitHandler = data => {
-    console.log(data);
-    this.setState({
-      contacts: [data, ...this.state.contacts],
-    });
+    data
+      ? alert(`${data.name} is already in contacts`)
+      : this.setState({
+          contacts: [data, ...this.state.contacts],
+        });
   };
 
   handleFilter = event => {
