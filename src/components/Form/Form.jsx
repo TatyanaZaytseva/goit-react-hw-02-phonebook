@@ -4,14 +4,16 @@ import css from 'components/Form/Form.module.css';
 
 export class Form extends Component {
   nameInputId = nanoid();
+  numberInputId = nanoid();
 
   state = {
     name: '',
+    number: '',
   };
 
   handleInputChange = event => {
-    const { name, value } = event.currentTarget;
-    this.setState({ [name]: value });
+    const { name, value, id } = event.currentTarget;
+    this.setState({ [name]: value, id: nanoid() });
   };
 
   handleSubmit = event => {
@@ -34,7 +36,7 @@ export class Form extends Component {
           className={css.form}
           onSubmit={this.handleSubmit}
         >
-          <label htmlFor={this.nameInputId} className={css.name}>
+          <label htmlFor={this.nameInputId} className={css.label}>
             Name <br />
             <input
               type="text"
@@ -48,6 +50,21 @@ export class Form extends Component {
               onChange={this.handleInputChange}
             />
           </label>
+          <label htmlFor={this.numberInputId} className={css.label}>
+            Number <br />
+            <input
+              type="tel"
+              name="number"
+              id={this.numberInputId}
+              pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+              title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+              required
+              className={css.input}
+              value={this.state.number}
+              onChange={this.handleInputChange}
+            />
+          </label>
+
           <button type="submit" className={css.button}>
             Add contact
           </button>

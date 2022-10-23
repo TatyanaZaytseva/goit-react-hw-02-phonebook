@@ -2,10 +2,10 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 import css from 'components/ContactItem/ContactItem.module.css';
 
-export const ContactItem = ({ id, name }) => {
+export const ContactItem = ({ id, name, number }) => {
   return (
     <li className={css.item}>
-      {name}
+      {name}: {number}
       {/* <button
         className={css.button}
         type="button"

@@ -1,12 +1,13 @@
 import { Component } from 'react';
-import { Form } from './Form/Form';
-import { ContactsList } from './ContactsList/ContactsList';
-import css from 'components/App.module.css';
+import { Form } from '../Form/Form';
+import { ContactsList } from '../ContactsList/ContactsList';
+import css from 'components/App/App.module.css';
 
 export class App extends Component {
   state = {
     contacts: [],
   };
+
   formSubmitHandler = data => {
     console.log(data);
     this.setState({

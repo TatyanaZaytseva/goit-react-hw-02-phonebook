@@ -14,8 +14,8 @@ export const ContactsList = ({ contacts, onDeleteContact }) => {
               key={contact.id}
               id={contact.id}
               name={contact.name}
-              //   number={contact.number}
-              //   onDeleteContact={onDeleteContact}
+              number={contact.number}
+              // onDeleteContact={onDeleteContact}
             />
           );
         })}
